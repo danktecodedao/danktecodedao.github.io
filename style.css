@@ -1,0 +1,142 @@
+/* Nhúng font chữ Nunito từ Google Fonts cho thanh thoát */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+
+:root {
+    --primary: #4CAF50;
+    --bg: #f0f4f8; /* Nền xám xanh nhạt nhìn dịu mắt */
+    --text: #2d3748;
+    --card-bg: #ffffff;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s ease;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary), #2e7d32); /* Hiệu ứng dải màu gradient */
+    color: white;
+    padding: 2.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-bottom-left-radius: 25px; /* Bo tròn góc dưới header */
+    border-bottom-right-radius: 25px;
+    margin-bottom: 2rem;
+}
+
+header h1 { margin: 0; font-size: 2.2rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+header p { margin-top: 10px; opacity: 0.9; font-size: 1.1rem; }
+
+.container { max-width: 800px; margin: 0 auto; padding: 0 20px 40px; }
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.tab {
+    padding: 15px;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+    font-weight: 800;
+    transition: all 0.3s ease;
+    color: #718096;
+}
+
+.tab:hover { background-color: #f7fafc; color: var(--primary); }
+.tab.active { background-color: var(--primary); color: white; }
+
+.section {
+    display: none;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    animation: fadeIn 0.4s ease-in-out; /* Hiệu ứng mờ dần khi mở tab */
+}
+.section.active { display: block; }
+
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(10px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 15px 0;
+    transition: all 0.2s;
+}
+.menu-item:last-child { border-bottom: none; }
+.menu-item:hover { transform: translateX(5px); } /* Trỏ chuột vào món ăn sẽ thụt vào 1 chút */
+
+.menu-item strong { font-size: 1.2rem; color: #1a202c; }
+.menu-item small { color: #718096; display: block; margin-top: 5px; font-size: 0.9rem;}
+
+.btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.btn:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
+    filter: brightness(1.1); 
+}
+.btn:active { transform: translateY(0); }
+
+.cart-summary {
+    margin-top: 30px;
+    font-size: 1.1em;
+    background: #f7fafc;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.cart-summary p { margin: 10px 0; display: flex; justify-content: space-between; }
+.cart-summary h3 { 
+    margin-top: 20px; 
+    display: flex; 
+    justify-content: space-between; 
+    border-top: 2px dashed #cbd5e0; 
+    padding-top: 15px; 
+    color: var(--primary);
+}
+
+#minigame-box {
+    text-align: center;
+    padding: 40px 20px;
+    border: 3px dashed var(--primary);
+    border-radius: 15px;
+    background: #f0fff4;
+}
+
+.badge {
+    background: #ff9800;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    vertical-align: middle;
+    margin-left: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
